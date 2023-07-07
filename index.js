@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import { tahukahanda } from './lib/tahukahanda.js';
-import { didyouknow } from './lib/didyouknow.js';
-import { bibleverse } from './lib/bibleverse.js';
+import { tahukahAnda } from './lib/tahukahanda.js';
+import { didYouKnow } from './lib/didyouknow.js';
+import { bibleVerse } from './lib/bibleverse.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,21 +14,21 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/api/tahukah-anda', async (req, res) => {
-    const data = await tahukahanda();
+    const data = await tahukahAnda();
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
 
 app.get('/api/did-you-know', async (req, res) => {
-    const data = await didyouknow();
+    const data = await didYouKnow();
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
 
 app.get('/api/random-bible-verse', async (req, res) => {
-    const data = await bibleverse();
+    const data = await bibleVerse();
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
