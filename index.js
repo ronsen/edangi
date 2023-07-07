@@ -4,6 +4,7 @@ import path from 'path';
 import { tahukahAnda } from './lib/tahukahanda.js';
 import { didYouKnow } from './lib/didyouknow.js';
 import { bibleVerse } from './lib/bibleverse.js';
+import { ayatAcak } from './lib/ayatacak.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,6 +30,13 @@ app.get('/api/did-you-know', async (req, res) => {
 
 app.get('/api/random-bible-verse', async (req, res) => {
     const data = await bibleVerse();
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(data));
+});
+
+app.get('/api/ayat-acak', async (req, res) => {
+    const data = await ayatAcak();
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
