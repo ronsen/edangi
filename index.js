@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import { tahukahAnda } from './lib/tahukahanda.js';
-import { didYouKnow } from './lib/didyouknow.js';
-import { bibleVerse } from './lib/bibleverse.js';
-import { ayatAcak } from './lib/ayatacak.js';
+import { tahukahAnda } from './lib/tahukah-anda.js';
+import { didYouKnow } from './lib/did-you-know.js';
+import { bibleVerse } from './lib/bible-verse.js';
+import { ayatAcak } from './lib/ayat-acak.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
