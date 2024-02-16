@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 app.get('/', async (req, res) => {
-    res.sendFile(path.resolve('.', 'index.html'));
+    res.sendFile(path.resolve('.', './src/index.html'));
 });
 
 app.get('/api/tahukah-anda', async (req, res) => {
