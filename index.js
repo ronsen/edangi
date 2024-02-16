@@ -15,29 +15,33 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/api/tahukah-anda', async (req, res) => {
-    const data = await tahukahAnda();
+    const { status, data } = await tahukahAnda();
 
+    res.status(status);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
 
 app.get('/api/did-you-know', async (req, res) => {
-    const data = await didYouKnow();
+    const { status, data } = await didYouKnow();
 
+    res.status(status);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
 
 app.get('/api/random-bible-verse', async (req, res) => {
-    const data = await bibleVerse();
+    const { status, data } = await bibleVerse();
 
+    res.status(status);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
 
 app.get('/api/ayat-acak', async (req, res) => {
-    const data = await ayatAcak();
+    const { status, data } = await ayatAcak();
 
+    res.status(status);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data));
 });
