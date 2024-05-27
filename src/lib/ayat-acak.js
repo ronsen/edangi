@@ -12,7 +12,7 @@ export const ayatAcak = async () => {
   if (status == 200) {
     const $ = cheerio.load(body);
     const verse = $("#__next > div > main > div > div > div > div:nth-child(1) > div > a:nth-child(2) > p").text();
-    const content = $("#__next > div > main > div > div > div > div:nth-child(1) > div > a:nth-child(1)").html().replace(/[\n\r]+/g, ' ');;
+    const content = $("#__next > div > main > div > div > div > div:nth-child(1) > div > a:nth-child(1)").html().replace(/[\n\r]+/g, ' ');
 
     data.verse = verse;
     data.content = content;
